@@ -51,3 +51,16 @@
 		
 		
 	}
+	//Skip the splash
+	if(Input.StartPress || Input.APress)
+	{
+		fade_to_room(rm_stage_select, 2);
+		
+		ease_timer[2] = approach(ease_timer[2], 1, 0.008);
+		
+		scale_x = 6 * easeInQuad(ease_timer[2]);
+		scale_y = 6 * easeInQuad(ease_timer[2]);
+		
+		scale_x += 1;	
+		scale_y += 1;
+	}

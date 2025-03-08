@@ -4,7 +4,7 @@
 	sound_sel = 0;
 	
 	//The lists
-	zone_list = [["ARBOREAL AGATE", rm_arboreal_agate1, rm_arboreal_agate2]];
+	zone_list = [["MARBLE TEMPLE", rm_marble_temple1],["ARBOREAL AGATE", rm_arboreal_agate1, rm_arboreal_agate2]];
 	
 	reset_stage_data();
 	global.score = 0;

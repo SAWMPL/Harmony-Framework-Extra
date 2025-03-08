@@ -1,29 +1,13 @@
-# Harmony Framework Extra
+# Harmony Framework Plus
 
-Fork of a Harmony framework (made by Darknn__).
-Adds stuff that's not gonna be in harmony or isn't added yet.
+# NOTICE!!
+This build is beta at the moment, you can make a fangame in this all of essential features are done, use it at your own risk. [Current version: 0.9 - Stable]
 
-# Feel free to use it but don't forget to credit us! 
-
-# Additions
-
-Added:
-- Rotating platforms
-- Flail
-- Swing ropes
-- Button and template activation object
-- Smooth palette swap shader
-
-WIP:
-- Arboreal Agate act 2
-
-To do:
-- Spiral path
-- Ziplines
-- Rail surfaces
-- Superform
-- Boss system
-- Collectible example
-- Special stage *-I'm not sure-*
-- Title screen template
-- *idk... something*
+# What is this?
+  Accurate and stable Sonic framework for GameMaker Studio 2 that's simple to use.
+  
+# Documentation and support
+  PDF of function sheet is currently being worked on
+  #
+  [Support server for Harmony Framework](https://discord.gg/FH4pHSEv3n). Support will not be given to Sonic.EXE or any creepypasta games!
+  

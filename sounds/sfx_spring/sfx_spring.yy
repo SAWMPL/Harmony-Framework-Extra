@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":0.902494,
+  "duration":0.848367,
   "name":"sfx_spring",
   "parent":{
     "name":"Objects",

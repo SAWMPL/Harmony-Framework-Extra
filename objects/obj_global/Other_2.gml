@@ -10,7 +10,7 @@
 	global.character = CHAR_SONIC;			//Global value for the character
 	
 	//Screen values
-	global.window_width  = 320;				//Window's horizontal size
+	global.window_width  = 426;				//Window's horizontal size
 	global.window_height = 240;				//Window's vertical size
 	global.window_size   = 2;				//Window size multiplier
 	
@@ -53,17 +53,16 @@
 	global.ring_extralife = 100;			//Ring threshold for extra life
 	
 	//Customizables variables
-	global.rotation_type = 1;				//This changes player's visual rotation 
+	global.rotation_type = 0;				//This changes player's visual rotation 
 	global.use_battery_rings = false;		//If this is disabled, destroying enemies will spawn flickies instead
 	global.chaotix_monitors = false;		//Changes monitor icons to be like chaotix, monitor icon spins and it turns into dust
 	global.use_peelout = true;				//Flag that allows peel-out ability
 	global.use_dropdash = true;				//Flag that allows dropdash ability
-	global.use_airroll = false;				//Flag that allows rolling while air-borne
+	global.use_airroll = true;				//Flag that allows rolling while air-borne
 	global.use_spindash = true;				//Flag taht allows player to use the spindash
-	global.camera_pan_type = 0;				//Variable that changes how camera panning works. 0 = No panning, 1 = Sonic CD panning[currently inaccurate], 2 = S1D/XG styled camera panning 
 	global.chaotix_dust_effect = false;		//Flag that disables classic spindash/skid dust effect
 	global.camera_type = 1;					//Vertical camera scrolling type, 0 = Megadrive, 1 = Mania
-	global.knux_camera_smooth = false;		//Flag for using smooth ledge climb camera movement
+	global.knux_camera_smooth = true;		//Flag for using smooth ledge climb camera movement
 	
 	//Font setup:
 	global.hud_number = font_add_sprite(spr_hud_numbers, ord("0"), false, 0);
@@ -92,7 +91,7 @@
 	#macro Input obj_input
 	#macro WINDOW_WIDTH global.window_width
 	#macro WINDOW_HEIGHT global.window_height
-	#macro FRAME_TIMER global.object_timer
+	#macro OBJECT_TIMER global.object_timer
 	
 	//Ending event:
 	room_goto_next();

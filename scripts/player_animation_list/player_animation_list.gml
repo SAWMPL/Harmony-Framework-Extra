@@ -23,6 +23,7 @@ function player_animation_list(){
 		animation_add(ANIM_LEDGE2, spr_sonic_ledge2, 0.1, 0, true, false);
 		animation_add(ANIM_VICTORY, spr_sonic_victory, 0.1, 1, true, false);
 		animation_add(ANIM_DROPDASH, spr_sonic_dropdash, 0.5, 1, true, false);
+		animation_add(ANIM_WAIT_EVENT1, spr_sonic_wait_event1, 25, 1, true, true);
 		break;
 		
 		case CHAR_TAILS:

@@ -27,13 +27,18 @@
 	draw_clear_alpha(c_black, 0);
 	
 	//Draw normal text
-	draw_sprite(spr_hudtext, 0, 16 + offset[0], 8);
-	draw_sprite(spr_hudtext, 1, 16 + offset[1], 24);
-	draw_sprite(spr_hudtext, 2, 16 + offset[2], 40);
+	draw_sprite(spr_hudtext, 0, 20 + offset[0], 8);
+	draw_sprite(spr_hudtext, 1, 20 + offset[1], 24);
+	draw_sprite(spr_hudtext, 2, 20 + offset[2], 40);
+	
+	
+	//Draw part of hud that i hate
+//	draw_sprite(spr_hud_scoretimerings_icon, image_index/3, 3 + offset[0], 8);
+//	draw_sprite(spr_hud_scoretimerings_icon_2, image_index/3, 3 + offset[0], 41);
 	
 	//Red flashing text
-	if(global.rings == 0 && global.object_timer mod 20 < 20/2) draw_sprite(spr_hudtext, 4, 16 + offset[2], 40);
-	if(global.stage_timer >= 540000 && global.object_timer mod 20 < 20/2) draw_sprite(spr_hudtext, 3, 16 + offset[1], 24);
+	if(global.rings == 0 && global.object_timer mod 20 < 20/2) draw_sprite(spr_hudtext, 4, 20 + offset[2], 40);
+	if(global.stage_timer >= 540000 && global.object_timer mod 20 < 20/2) draw_sprite(spr_hudtext, 3, 20 + offset[1], 24);
 	
 	//Draw life icon
 	draw_sprite(spr_hud_life_icons, global.character, 16 + offset[3], global.window_height - 26);
@@ -43,10 +48,10 @@
 	draw_set_halign(fa_right);
 	
 	//Draw number
-	draw_text(120 + offset[0], 9, string(global.score));
-	draw_text(120 + offset[1], 25, string(minute)+" "+(sec > 9 ? "" : "0") + string(sec)+" "+(milsec > 9 ? "" : "0") + string(milsec));
-	draw_text(96 + offset[2], 41, string(global.rings));
-	draw_text(56 + offset[3], global.window_height - 24, (global.life > 9 ? "" : "0") + string(global.life));
+	draw_text(124 + offset[0], 10, string(global.score));
+	draw_text(124 + offset[1], 26, string(minute)+" "+(sec > 9 ? "" : "0") + string(sec)+" "+(milsec > 9 ? "" : "0") + string(milsec));
+	draw_text(100 + offset[2], 42, string(global.rings));
+	draw_text(61 + offset[3], global.window_height - 24, (global.life > 9 ? "" : "0") + string(global.life));
 	
 	surface_reset_target();
 	

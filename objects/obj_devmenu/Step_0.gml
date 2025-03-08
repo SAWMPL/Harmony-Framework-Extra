@@ -62,23 +62,33 @@
 			{
 				switch(menu_select)
 				{
-					//Start the whole game
+					//Trigger the window event
 					case 0:	
+						with(obj_window)
+						{
+							event_user(0);	
+						}
+			
+						global.process_objects = true;
+						instance_destroy();
+					break;
+					//Start the whole game
+					case 1:	
 						game_restart();
 					break;
 					
 					//Go to the character select
-					case 1:
+					case 2:
 						state = dev_menu_state.character_select;
 					break;
 					
 					//Go to options
-					case 2:
+					case 3:
 						state = dev_menu_state.options;
 					break;
 				
 					//Exit the game
-					case 3:
+					case 4:
 						game_end();
 					break;
 				}
@@ -156,9 +166,9 @@
 			scene_select = wrap(scene_select, 0, array_length(scene_name[category_select + 1]) - 1);
 			
 			//Scroll menu text up
-			if(scene_select > 6 + scene_offset)
+			if(scene_select > 7 + scene_offset)
 			{
-				scene_offset = scene_select - 6;
+				scene_offset = scene_select - 7;
 			}
 			
 			//Scroll menu text down
@@ -201,9 +211,9 @@
 			option_select = wrap(option_select, 0, option_id - 1);
 			
 			//Scroll menu text up
-			if(option_select > 6 + option_offset)
+			if(option_select > 7 + option_offset)
 			{
-				option_offset = option_select - 6;
+				option_offset = option_select - 7;
 			}
 			
 			//Scroll menu text down

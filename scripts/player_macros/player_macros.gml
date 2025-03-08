@@ -55,6 +55,7 @@ function player_macros(){
 	#macro ANIM_KNUXLEDGE 32
 	#macro ANIM_KNUXLAND 33
 	#macro ANIM_DROPDASH 34
+	#macro ANIM_WAIT_EVENT1 35
 	
 	//Shield macros
 	#macro S_NONE -1

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"init_music_list",
   "parent":{
-    "name":"Sequences",
-    "path":"folders/Sequences.yy",
+    "name":"Init. Scripts",
+    "path":"folders/Scripts/Init. Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

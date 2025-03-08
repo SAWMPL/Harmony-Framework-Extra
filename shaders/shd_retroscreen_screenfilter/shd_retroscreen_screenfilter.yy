@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_retroscreen_screenfilter",
+  "name":"shd_retroscreen_screenfilter",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

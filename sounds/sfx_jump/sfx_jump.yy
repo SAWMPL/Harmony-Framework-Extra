@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":1,
+  "compression":0,
   "conversionMode":0,
-  "duration":0.435374,
+  "duration":0.434921,
   "name":"sfx_jump",
   "parent":{
     "name":"Player",
@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_jump.wav",
-  "type":0,
+  "type":1,
   "volume":1.0,
 }

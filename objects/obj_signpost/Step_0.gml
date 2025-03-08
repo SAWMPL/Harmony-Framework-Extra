@@ -130,3 +130,9 @@
 	{
 		instance_create_depth(0, 0, 0, obj_act_clear);
 	}
+	
+	/// Thanks for a kind redditor u/AmnesiA_sc
+	JetImageIndex += JetImageSpeed;
+	if( JetImageIndex >= JetImageNumber){
+	    JetImageIndex -= JetImageNumber;
+	}

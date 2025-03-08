@@ -74,9 +74,21 @@ function player_state_normal(){
 	switch(character)
 	{
 		case CHAR_SONIC:
-			if(idle_timer > 160)
+			if(idle_timer > 160 && idle_timer < 360)
 			{
 				anim = ANIM_WAIT;	
+			}
+			else if(idle_timer > 360)
+			{
+				anim = ANIM_WAIT_EVENT1;	
+			}
+			else if(idle_timer >= 560)
+			{
+				idle_timer = 160
+			}
+			if(animation_get_frame(animator) == 2 && anim == ANIM_WAIT_EVENT1 && !audio_is_playing(sfx_screenknock))
+			{
+				play_sound(sfx_screenknock, false)
 			}
 		break;
 		
