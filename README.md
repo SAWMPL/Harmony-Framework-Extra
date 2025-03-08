@@ -1,13 +1,8 @@
-# Harmony Framework Plus
-
-# NOTICE!!
-This build is beta at the moment, you can make a fangame in this all of essential features are done, use it at your own risk. [Current version: 0.9 - Stable]
+# Sonic & Southwest Island
 
 # What is this?
-  Accurate and stable Sonic framework for GameMaker Studio 2 that's simple to use.
+  This project is a **Sonic The Hedgehog fangame**, made using Gamemake Studio engine called **Harmony Framework Extra** by Sawmpl and Dark
   
 # Documentation and support
-  PDF of function sheet is currently being worked on
-  #
-  [Support server for Harmony Framework](https://discord.gg/FH4pHSEv3n). Support will not be given to Sonic.EXE or any creepypasta games!
+  [Southwest Island discord server](https://discord.gg/Zj9zzsVQuQ). Goog... 
   
