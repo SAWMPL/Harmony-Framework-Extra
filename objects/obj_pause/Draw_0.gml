@@ -13,7 +13,7 @@
 	draw_clear_alpha(c_black, 0);
 	
 	//Draw Pause Menu Options.
-	draw_sprite(spr_pause_menu, pause_options, sw/2, sh/2);
+	draw_sprite(spr_pause_menu, pause_select, sw/2, sh/2);
 	
 	surface_reset_target();
 	

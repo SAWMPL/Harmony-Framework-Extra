@@ -1,4 +1,2 @@
-/// @description Remove Pause Menu Surface
-
-	surface_free(pause_menu);
-	pause_menu = -1;
+/// @description fade to room
+    if(pause_select != 0) fade_to_room(room_togo, 5);
