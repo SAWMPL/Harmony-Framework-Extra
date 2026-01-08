@@ -1,0 +1,1 @@
+    bumpers_cooldown -= 1;

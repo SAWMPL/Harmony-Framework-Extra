@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"bgm_arboreal_agate2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":1,
   "compression":1,
+  "compressionQuality":4,
   "conversionMode":0,
-  "duration":130.42938,
+  "duration":148.82498,
+  "exportDir":"",
   "name":"bgm_arboreal_agate2",
   "parent":{
     "name":"Stage Music",
@@ -19,7 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"bgm_arboreal_agate2.ogg",
-  "type":1,
+  "soundFile":"bgm_arboreal_agate2.mp3",
   "volume":1.0,
 }

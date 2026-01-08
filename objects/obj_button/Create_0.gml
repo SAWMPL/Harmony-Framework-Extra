@@ -1,2 +1,0 @@
-triggered = false;
-pushed = false;

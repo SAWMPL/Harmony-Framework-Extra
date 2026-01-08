@@ -1,12 +1,10 @@
 	with(obj_level)
 	{
-		//Set stage music and pitch values
-		stage_music = BGM_ARBOREAL_2;
-		stage_pitch = 1.00;
-		stage_speedshoes_pitch = 1.25;
+		//Set stage music and loop points
+		stage_music = "ARBOREAL 2";
 		
 		//Set level name
-		stage_name = "ARBOREAL AGATE";
+		stage_name = "Arboreal Agate";
 		
 		//Set stage act
 		act = 2;

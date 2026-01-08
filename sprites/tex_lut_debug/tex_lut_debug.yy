@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"tex_lut_debug",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":true,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9a994d8f-224e-4b94-bf68-22c1d12f7231","name":"9a994d8f-224e-4b94-bf68-22c1d12f7231","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9a994d8f-224e-4b94-bf68-22c1d12f7231","name":"9a994d8f-224e-4b94-bf68-22c1d12f7231","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

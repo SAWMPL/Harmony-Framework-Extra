@@ -71,7 +71,7 @@
 		if(keyboard_check_pressed(ord("2")))
 		{
 			global.life++;
-			play_sound(j_extra_life);
+			SOUND_EXTRA_LIFE;
 		}
 		
 		//Change shields
@@ -90,7 +90,6 @@
 		{
 			obj_player.invincible = true;
 			obj_player.invincible_timer = 1200;
-			play_music(J_INVINCIBLE, Jingle);
 		}
 		
 		//Give the player speed shoes
@@ -98,14 +97,13 @@
 		{
 			obj_player.speed_shoes_flag = true;
 			obj_player.speed_shoes = 1200;
-			if(global.speed_shoes_music == 0)
-			{
-				play_music(J_SPEEDSHOE, Jingle);
-			}
-			else if(global.speed_shoes_music == 1)
-			{
-				music_set_pitch(BGM, obj_level.stage_speedshoes_pitch);
-			}
+		}
+		
+		//Combine Rings
+		if(keyboard_check_pressed(ord("6")))
+		{
+			obj_player.combinering = 1;
+			play_sound(sfx_combinering);
 		}
 		
 		//Hurt the player

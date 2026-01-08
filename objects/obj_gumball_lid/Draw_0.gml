@@ -1,0 +1,1 @@
+draw_sprite(spr_machine_lid, obj_gumball_machine.lid_frame, x, y+64);

@@ -1,14 +1,20 @@
 function player_handle_hurt()
 {
-	if(state != ST_KNOCKOUT)
+	if (disable_death) {
+		exit;	
+	}
+	
+	if(state != player_state_knockout)
 	{
-		//Reset knowckout type when you're invicible
+		//Reset knockout type when you're invicible
 		if(invincible || invincible_timer > 0)
 		{
-			knockout_type = 0;	
+			if (knockout_type == K_HURT) {
+				knockout_type = 0;	
+			}
 		}
 		
-		if(invincible_timer == 0 && !invincible)
+		if(knockout_type != 0)
 		{
 			if(knockout_type == K_HURT)
 			{
@@ -43,14 +49,31 @@ function player_handle_hurt()
 					
 					//Give player invincibility frames and put the player in knockout state
 					invincible_timer = 120;
-					state = ST_KNOCKOUT;
+					state = player_state_knockout;
 					
-					//Commit ring loss when player gets hurt
-					if(shield == S_NONE)
+                    //Commit ring loss when player gets hurt
+					if(shield == S_NONE && combinering == 0)
 					{
 						create_ringloss(global.rings);	
 						play_sound(sfx_ringloss);
 						global.rings = 0;
+					}
+					
+					//Combine Ring
+					if(shield == S_NONE && combinering != 0)
+					{
+						//Chaotix combine ring
+						if(combinering == 1)
+						{
+							var combi = instance_create_depth(x, y, depth-1, obj_combine_ring);
+							combi.rings = global.rings;
+							combi.x_speed = 1 * facing;
+							play_sound(sfx_hurt);
+							global.rings = 0;
+							combineloss = 1;
+						    combinering = 0;
+							
+						}
 					}
 					
 					//Remove the shield when player gets hurt
@@ -63,11 +86,29 @@ function player_handle_hurt()
 			}
 		}
 		
+		//Basic knockout
+		if(knockout_type = K_STUNNED)
+		{
+			//Get the hurt side
+			var side = 1;
+			if(sign(x - hurt_position) != 0)
+			{
+				side = sign(x - hurt_position);
+			}
+			
+			x_speed = (2 * side) / (1 + underwater);
+			y_speed = -4 / (1 + underwater);
+			ground = false;
+			invincible_timer = 120;
+			state = player_state_knockout;
+			play_sound(sfx_hurt);
+		}
+		
 		//Player's death event
 		if(knockout_type == K_DIE)
 		{
 			//Set player to the knockout state
-			state = ST_KNOCKOUT;
+			state = player_state_knockout;
 			
 			//Bounce the player out
 			y_speed = -7;
@@ -93,6 +134,7 @@ function player_handle_hurt()
 	if(y > obj_camera.target_bottom && y > obj_camera.limit_bottom && knockout_type != K_DIE)
 	{
 		knockout_type = K_DIE;
+        state = player_state_knockout
 	}
 	
 	

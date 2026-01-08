@@ -6,7 +6,4 @@
 	chain_amount = floor(sprite_height / 16);
 	
 	//Craete the platform
-	for (var i = 0; i < swings_amount; i++) 
-	{
-		platform[i] = instance_create_depth(x, y, depth-1, obj_aaz_swing_platform);
-	}
+	platform = instance_create_depth(x, y, depth-1, obj_aaz_swing_platform);

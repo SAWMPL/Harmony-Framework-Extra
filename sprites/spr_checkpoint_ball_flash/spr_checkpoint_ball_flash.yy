@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_checkpoint_ball_flash",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"eaa8ef23-19de-405c-9951-c3156ab401bb","name":"eaa8ef23-19de-405c-9951-c3156ab401bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"a1202c91-e8d7-4007-958f-2b0a3b3431aa","name":"a1202c91-e8d7-4007-958f-2b0a3b3431aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eaa8ef23-19de-405c-9951-c3156ab401bb","name":"eaa8ef23-19de-405c-9951-c3156ab401bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a1202c91-e8d7-4007-958f-2b0a3b3431aa","name":"a1202c91-e8d7-4007-958f-2b0a3b3431aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

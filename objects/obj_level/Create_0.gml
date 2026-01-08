@@ -2,21 +2,26 @@
 
 	disable_timer = false;
 	badnik_chain = 0;
+	scattered_emerald_shards = false
+	emerald_array = []
 	
 	//====================================================//
 	//				 **DEFAULT STAGE SETUP**			  //
 	//====================================================//
 	
-	//Set stage music and pitch values
+	//Set stage music and loop points
 	stage_music = noone;
-	stage_pitch = 1.00;
-	stage_speedshoes_pitch = 1.25;
+	loop_start = 0.00;
+	loop_end = 0.00;
 		
 	//Set level name
-	stage_name = "EMPTY LEVEL";
+	stage_name = "Empty Level";
 		
 	//Set stage act
 	act = 1;
+	is_emerald_hunt = false;
+	emerald_hunt_randoms = 3;
+	emerald_hunt_total = 0;
 		
 	//Is next level doing act transition
 	act_transition = false;
@@ -26,3 +31,6 @@
 		
 	//Next level
 	next_level = room;
+	
+	//Setup red rings
+	red_ring_count = 0

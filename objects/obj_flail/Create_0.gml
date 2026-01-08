@@ -1,7 +1,4 @@
-/// @description Create a variables
-	angle = 0;
-	rot_speed = 2;
-	chain_length = floor((sprite_width-64)/14+2);
-	chain_scale = 1;
-	ball_scale = 1;
-	attacking = false;
+angle = 0;
+chain_width = 12;
+chain_length = round(((bbox_right-bbox_left)-52-26)/chain_width)+3;
+attacking = false;

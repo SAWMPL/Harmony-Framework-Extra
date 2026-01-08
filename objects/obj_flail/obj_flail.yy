@@ -3,15 +3,15 @@
   "%Name":"obj_flail",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_flail",
   "overriddenProperties":[],
   "parent":{
-    "name":"Extra",
-    "path":"folders/Objects/Stage Objects/Extra.yy",
+    "name":"EXTRA",
+    "path":"folders/Objects/EXTRA.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,14 +27,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"rot_speed","filters":[],"listItems":[],"multiselect":false,"name":"rot_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"sprite_index","filters":[],"listItems":[],"multiselect":false,"name":"sprite_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sprite_index","varType":4,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_flail_editor",
-    "path":"sprites/spr_flail_editor/spr_flail_editor.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

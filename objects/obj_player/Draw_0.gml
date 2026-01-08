@@ -1,11 +1,16 @@
 /// @description Draw the player
-	if(state = ST_KNOCKOUT || invincible_timer mod 12 >= 6 || invincible_timer = 0 || invincible)
+	
+	//character palettes for super form
+	palette_swap(super_palettes[character],super_color);
+	
+	
+	if(state == player_state_knockout || invincible_timer mod 12 >= 6 || invincible_timer = 0 || invincible)
 	{
-		if(speed_shoes)
+		if(speed_shoes || super)
 		{
 			for (var i = 0; i < 3; ++i) 
 			{
-				if((global.object_timer) mod 4 = i )
+				if((FRAME_TIMER mod 3) = i )
 				{
 					if(x_speed != 0 || y_speed != 0)
 					{
@@ -37,9 +42,9 @@
 		//Draw the player:
 		draw_animator(animator, floor(x), floor(y), image_xscale, 1, image_angle, c_white, 1);
 	}
-	
+	shader_reset()
 	//Draw spindash dust effect
-	if(!global.chaotix_dust_effect && state = ST_SPINDASH && ground)
+	if(!global.chaotix_dust_effect && state = player_state_spindash && ground)
 	{
 		draw_sprite_ext(spr_effect_spindash, spindash_dust_frames, floor(x) - 2 * facing, floor(y) + hitbox_h + 1, facing, 1, 0, c_white, 1);	
 	}

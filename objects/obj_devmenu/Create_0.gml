@@ -73,24 +73,25 @@
 	dev_menu_add_option_flag("Airroll Flag", "use_airroll");
 	dev_menu_add_option_flag("Dropdash Flag", "use_dropdash");
 	dev_menu_add_option_flag("Peelout Flag", "use_peelout");
-	dev_menu_add_option_number("Speed Shoes Music", "speed_shoes_music", 0, 1, 1);
 	
 	//Add the presentation category
 	dev_menu_add_category("PRESENTATION");
-	dev_menu_add_entry("STAGE SELECT", rm_stage_select);
+	dev_menu_add_entry("STAGE SELECT", rm_splash);
 	
-	//Add the Regular Stages category
+	//Add the presentation category
 	dev_menu_add_category("REGULAR STAGES");
-	dev_menu_add_entry("ARBOREAL AGATE ACT 1", rm_arboreal_agate1);
-	dev_menu_add_entry("2", rm_arboreal_agate2);
-	
-	//Add the Bonus Stages category
-	dev_menu_add_category("BONUS STAGES");
-	dev_menu_add_entry("BRIDGE ACT 1", rm_bridge);
+	dev_menu_add_entry("YOUR LEVEL", rm_your_zone);
+	dev_menu_add_entry("ARBOREAL AGATE 1", rm_arboreal_agate1);
+	dev_menu_add_entry("ARBOREAL AGATE 2", rm_arboreal_agate2);
 	
 	//Add all of the rooms
 	dev_menu_add_category("EVERY SCENE");
-	for (var i = 0; i <= room_last; ++i) 
+	var r = room_first;
+	var i=0;
+	dev_menu_add_entry(room_get_name(r), r);
+	while(r!=room_last)
 	{
-	    dev_menu_add_entry(room_get_name(i), i);
+		r = room_next(r);
+		i++;
+		dev_menu_add_entry(room_get_name(r), r);
 	}

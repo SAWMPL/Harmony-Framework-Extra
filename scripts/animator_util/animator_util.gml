@@ -21,6 +21,11 @@ function animator_reset(animator)
 
 function animator_update(animator)
 {
+	if(!global.process_objects)
+	{
+		exit
+	}
+	
 	if(!animator.animation_use_duration)
 	{
 		animator.animation_frame += animator.animation_speed;
@@ -55,11 +60,14 @@ function animator_update(animator)
 		
 	}
 	
+	animator.animation_finished = false;
+	
 	if(animator.animation_frame >= sprite_get_number(animator.animation_sprite))
 	{
 		if(animator.animation_loop) 
 		{
 			animator.animation_frame = animator.animation_loop_frame;
+			animator.animation_finished = true;
 		}
 		else 
 		{
@@ -99,7 +107,7 @@ function animator_update(animator)
 }
 
 function draw_animator(animator, pos_x = floor(x), pos_y = floor(y), x_scale = image_xscale, y_scale = image_yscale, angle = image_angle, color = c_white, alpha = 1)
-{
+{	
 	draw_sprite_ext(animator.animation_sprite, animator.animation_frame, pos_x, pos_y, x_scale, y_scale, angle, color, alpha);
 }
 
@@ -113,8 +121,13 @@ function animation_add(animation_id, animation_sprite, animation_speed, animatio
 	list_animation_duration[animation_id] = animation_speed;
 }
 
-function animation_play(animator, animation_id)
+function animation_play(animator, animation_id, dont_reset_frame = false)
 {
+	if(!global.process_objects)
+	{
+		exit
+	}
+	
 	animator.animation_to_set = animation_id;
 	
 	//If current animation is not matching the animation ID, then update it and reset its properties
@@ -130,7 +143,9 @@ function animation_play(animator, animation_id)
 		animator.animation_current = animation_id;
 		
 		//Reset animation's properties
-		animator.animation_frame = 0;
+		if (!dont_reset_frame) {
+			animator.animation_frame = 0;
+		}
 		animator.animation_finished = false;
 		animator.animator_reset_flag = false;
 			
@@ -141,7 +156,9 @@ function animation_play(animator, animation_id)
 		animator.animation_loop = list_animation_loop_flag[animator.animation_to_set];
 		animator.animation_use_duration = list_animation_duration_flag[animator.animation_to_set];
 		animator.animation_duration = list_animation_duration[animator.animation_to_set];
-		animator.animation_sub_image = 0;
+		if (!dont_reset_frame) {
+			animator.animation_sub_image = 0;
+		}
 	}
 }
 
@@ -179,12 +196,12 @@ function animation_get_frame(animator)
 
 function animation_get_speed(animator)
 {
-	return animator.animation_speed;
-	
 	if(animator.animation_use_duration)
 	{
 		return 0;	
 	}
+	
+	return animator.animation_speed;
 }
 
 function animation_get_frame_count(animator)
@@ -199,12 +216,12 @@ function animation_get_loop_index(animator)
 
 function animation_get_duration(animator)
 {
-	return animator.animation_duration;
-	
 	if(!animator.animation_use_duration)
 	{
 		return 0;	
 	}
+	
+	return animator.animation_duration;
 }
 
 function animation_set_speed(animator, animation_speed)

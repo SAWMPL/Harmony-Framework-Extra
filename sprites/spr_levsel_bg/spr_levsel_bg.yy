@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_levsel_bg",
   "bboxMode":0,
   "bbox_bottom":239,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":true,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c5a553c7-8251-45dd-9809-9681a28e662c","name":"c5a553c7-8251-45dd-9809-9681a28e662c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c5a553c7-8251-45dd-9809-9681a28e662c","name":"c5a553c7-8251-45dd-9809-9681a28e662c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

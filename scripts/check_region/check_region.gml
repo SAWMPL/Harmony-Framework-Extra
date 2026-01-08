@@ -4,7 +4,7 @@
 /// @param {real}  y_bottom   The y (object y + y_bottom) coordinate of the bottom side of the rectangle to check.
 /// @param {real}  _x         The x (_x = x by default) position of the x center of the rectangle to check.
 /// @param {real}  _y	      The y (_y = y by default) position of the y center of the rectangle to check.
-/// @description              Function check_region() uses the six arguments (x_left,y_top,x_right,y_bottom,_x,_y,) to define an area within the current room and then checks to see if the player is in collision with that area.
+/// @description              Function check_region() uses six arguments (x_left,y_top,x_right,y_bottom,_x,_y,) to define area within the current room and then checks to see if the player is in collision with that area.
 
 function check_region(x_left,y_top,x_right,y_bottom,_x = x,_y = y)
 {
@@ -12,8 +12,6 @@ function check_region(x_left,y_top,x_right,y_bottom,_x = x,_y = y)
 	{
 		return true;
 	}
-	else 
-	{
-		return false;
-	}
+    
+    return false;
 }

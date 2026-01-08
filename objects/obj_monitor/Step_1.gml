@@ -10,7 +10,7 @@
 	{
 		if(sign(image_yscale) == 1)
 		{
-			if(player.attacking && player.y_speed >= 0 && player.state != ST_SPINDASH || player.y + player.hitbox_h > bbox_top && player.state == ST_SPINDASH)
+			if(player.attacking && player.y_speed >= 0 && player.state != player_state_spindash || player.y + player.hitbox_h > bbox_top && player.state == player_state_spindash)
 			{
 				collision_flag = false;
 			}
@@ -53,6 +53,10 @@
 			player.y_speed = max(abs(player.y_speed), 4) * -sign(image_yscale);
 			create_effect(x, y, spr_effect_explosion01, 0.3);
 			play_sound(sfx_destroy);
+			
+			if (!instance_exists(obj_bonus_level)) {
+				global.store_object_state[| id] = true
+			}
 			
 			//Create icons
 			var icon = instance_create_depth(x, y, depth, obj_monitor_icon);

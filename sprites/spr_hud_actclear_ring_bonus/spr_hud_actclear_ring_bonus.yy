@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_hud_actclear_ring_bonus",
   "bboxMode":0,
   "bbox_bottom":13,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3ff449cd-831d-447d-879b-9f9260e91616","name":"3ff449cd-831d-447d-879b-9f9260e91616","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3ff449cd-831d-447d-879b-9f9260e91616","name":"3ff449cd-831d-447d-879b-9f9260e91616","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

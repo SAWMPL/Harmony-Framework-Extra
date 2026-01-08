@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_knuckles_slide",
   "bboxMode":0,
   "bbox_bottom":43,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6f32e944-ff30-430c-ab11-4bd2bc3d80bb","name":"6f32e944-ff30-430c-ab11-4bd2bc3d80bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6f32e944-ff30-430c-ab11-4bd2bc3d80bb","name":"6f32e944-ff30-430c-ab11-4bd2bc3d80bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

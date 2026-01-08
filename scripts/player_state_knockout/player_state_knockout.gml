@@ -1,6 +1,4 @@
 function player_state_knockout(){
-	//Stop executing
-	if(state != ST_KNOCKOUT) exit;
 	
 	//Change flags
 	direction_allow = false;
@@ -11,12 +9,26 @@ function player_state_knockout(){
 	{
 		case K_HURT:
 			//Change animation
-			animation_play(animator, ANIM_HURT);
+			animation_play(animator, ANIM.HURT);
 			
 			//Exit when grounded
 			if(ground)
 			{
-				state = ST_NORMAL;
+				state = player_state_normal;
+				ground_speed = 0;
+				knockout_type = 0;
+				exit;
+			}
+		break;
+		
+			case K_STUNNED:
+			//Change animation
+			animation_play(animator, ANIM.HURT);
+			
+			//Exit when grounded
+			if(ground)
+			{
+				state = player_state_normal;
 				ground_speed = 0;
 				knockout_type = 0;
 			}
@@ -25,20 +37,21 @@ function player_state_knockout(){
 		case K_DIE:
 		
 		case K_DROWN:
-			//Change player depth
-			depth = layer_get_depth("Utilities");
-			
 			//Remove underwater physics
 			if(knockout_type == K_DIE)
 			{
 				underwater = false;
+				//Change player depth
+				depth = layer_get_depth("Utilities");
 			}
 			
 			//Change animation
-			animation_play(animator, knockout_type == K_DIE ? ANIM_DIE : ANIM_DROWN);
+			animation_play(animator, knockout_type == K_DIE ? ANIM.DIE : ANIM.DROWN);
 			
 			//Disable collision
 			collision_allow = false;
+			x_speed = 0;
+			ground_speed = 0;
 			
 			//Add death timer
 			death_timer += 1;
@@ -52,15 +65,14 @@ function player_state_knockout(){
 			hitbox_allow = false;
 			
 			//Fade out
-			if(death_timer == 80)
+			if(death_timer == 120)
 			{
 				if(global.life != 0 || !is_time_over)
 				{
 					global.life -= 1;
 					if(global.life != 0 && !is_time_over)
 					{
-						obj_fade.fade_speed = 3;
-						obj_fade.fade_type = FADE_OUT;
+						fade_change(FADE_OUT, 3,FADE_BLACK)
 						music_set_fade(FADE_OUT, 2);
 					}
 				}
@@ -71,6 +83,10 @@ function player_state_knockout(){
 			{
 				if(global.life = 0 || is_time_over)
 				{
+					global.store_player_state.combinering = 0
+					global.store_player_state.shield = S_NONE
+					global.store_player_state.rings = 0
+					ds_list_clear(global.store_object_state)
 					music_set_fade(FADE_OUT, 2);
 					if(!instance_exists(obj_game_over))	
 					{
@@ -81,15 +97,19 @@ function player_state_knockout(){
 			}
 			
 			//Create bunch of bubbles for drowning event
-			if(global.object_timer mod 4 == 0 && knockout_type == K_DROWN){
+			if(FRAME_TIMER mod 4 == 0 && knockout_type == K_DROWN){
 				var bubble = instance_create_depth(x, y-12, depth-1, obj_bubble);
 				bubble.type = 0;	
 				bubble.angle = random(360);
 			}
 			
 			//Restart
-			if(death_timer == 140 && global.life != 0 && !is_time_over)
+			if(death_timer == 160 && global.life != 0 && !is_time_over)
 			{
+				global.store_player_state.combinering = 0
+				global.store_player_state.shield = S_NONE
+				global.store_player_state.rings = 0
+				ds_list_clear(global.store_object_state)
 				room_restart();
 			}
 		break;

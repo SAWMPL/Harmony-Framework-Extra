@@ -36,10 +36,16 @@
 		
 		bar_pos = 80 * easeOutElastic(ease_timer[3]);
 		bar_pos += 108;
+	
+		if (Input.StartPress || Input.ActionPress) && !skipped {
+			fade_to_room(room_next(room), 4);
+			skipped = true;
+		}
+		
 	}
 	else
 	{
-		fade_to_room(rm_stage_select, 1);
+		fade_to_room(room_next(room), 1);
 		
 		ease_timer[2] = approach(ease_timer[2], 1, 0.008);
 		

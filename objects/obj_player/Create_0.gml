@@ -20,18 +20,20 @@
 	
 	//Physics values
 	x_accel = 0.046875;					//Value used for player's horizontal acceleration
-	y_accel = 0.21875;					//Value used for player's vertical acceleration, specifically gravirt
+	x_deaccel = 0.5;
+	y_accel = 0.21875;					//Value used for player's vertical acceleration, specifically gravity
 	friction_speed = 0.046875;			//Value used for player's friction when input is not being held
 	top_speed = 6;						//Value used for player's top running speed
 	max_speed = 24;						//Player's horizontal speed cap
 	jump_strength = 6.5;				//Value used for player's jump strength 
 	jump_release = 4;					//Value used for speed when player releases the jump button
+	roll_friction = 0.0234375;
 	roll_influence_up = 0.078125;		//Value that influences rolling up slopes
 	roll_influence_down = 0.3125;		//Value that influences rolling down slopes
 	roll_speed_cap = 18;				//Value for rolling's maximum speed
 	
 	//State related values:
-	state = ST_NORMAL;					//Player's state machine
+	state = player_state_normal;					//Player's state machine
 	spindash_rev = 0;					//Spindash charge value
 	skid_timer = 0;						//Timer that is used to cancel the skid when input is not being held
 	dropdash_timer = 0;					//Dropdash charge delay timer
@@ -42,6 +44,7 @@
 	movement_allow = true;				//Flag used for allowing movement
 	attacking = false;					//Check used for when sonic is in attacking state or not
 	air = 0;							//Used for underwater timer for drowning
+	bubble_delay = 0;					//Used to determine the delay for when to spawn the small bubble
 	hurt_position = 0;					//Horizontal position of hazard that player has touched
 	spindash_pitch = 0;					//Separate rev value used for spindash pitch
 	idle_timer = 0;						//Timer used for idle animation
@@ -60,6 +63,7 @@
 	ground_push_flag = true;			//Check used when angle is out of tolerance range on the ledges, this disables push out of the ground
 	can_jump = false;					//Check used for if player is able to perform a jump
 	can_roll = false;					//Check used for if player is able to perform rolling
+	allow_super = false;				//Check used for if player is able to transform into their super form
 	
 	//Flags:
 	ceiling_allow = true;				//Flag for allowing ceiling landing
@@ -70,6 +74,7 @@
 	input_disable = false;				//Flag used for disabling player input
 	hitbox_allow = true;				//Flag used for allowing hitbox collision between player and other objects
 	flag_override = true;				//This is used to prevent flags from being override in player state list script when false
+	disable_death = false;				//If true, disables the ability to die via pits or other means 
 	
 	//Hitbox values:
 	hitbox_w = 9;						//Hitbox width variable
@@ -82,6 +87,8 @@
 	speed_shoes_flag = false;			//Check used to check if player has speed shoes or not
 	invincible_timer = 0;				//Timer used for invincibility
 	invincible = false;					//Check used to check if player has invincibility or not
+	super = false;						//Check used to check if player is in super form
+	transform_timer = 0;				//Timer for how long to stay in the transformation state
 	
 	//Character specifics:
 	tails_timer = 480;					//Timer used for tails flight
@@ -95,8 +102,12 @@
 	start_depth = depth;				//Starting depth when object has been created
 	
 	//Shields:
-	shield = S_NONE;					//Shield that player is currently using
+	shield = global.store_player_state.shield;					//Shield that player is currently using
 	shield_list = [obj_shield, obj_fire_shield, obj_electric_shield, obj_bubble_shield];	//The shield list
+	combinering =  global.store_player_state.combinering;
+	combineloss = 0;
+	
+	global.rings = global.store_player_state.rings;
 	
 	//Hitbox variables
 	hitbox_top_offset = 0;				//Hitbox offset of the top side
@@ -122,6 +133,12 @@
 	
 	//Camera rolling offset unique to each character
 	camera_rolling_offset = [5, 1, 5];
+	
+	//the index for the players super form palette
+	super_color = 0;
+	super_palettes = [tex_pal_supersonic, tex_pal_supertails, tex_pal_superknux]
+	#macro SUPER_PALETTE_SIZE 16
+	#macro SUPER_PALETTE_LOOP 7
 	
 	//Setup scripts
 	player_recorder_setup();			//Setup player visuals recorder

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_knuckles_run",
   "bboxMode":0,
   "bbox_bottom":52,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"46c55528-edaf-44e6-89a6-3461750b3e13","name":"46c55528-edaf-44e6-89a6-3461750b3e13","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7015790e-9920-47f7-bf94-d02610b6dc2c","name":"7015790e-9920-47f7-bf94-d02610b6dc2c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5876659a-e678-4c91-b2e7-4c7ba9308fd7","name":"5876659a-e678-4c91-b2e7-4c7ba9308fd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"573720e3-e136-4ee2-af11-ec1db2799ef8","name":"573720e3-e136-4ee2-af11-ec1db2799ef8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"46c55528-edaf-44e6-89a6-3461750b3e13","name":"46c55528-edaf-44e6-89a6-3461750b3e13","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7015790e-9920-47f7-bf94-d02610b6dc2c","name":"7015790e-9920-47f7-bf94-d02610b6dc2c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5876659a-e678-4c91-b2e7-4c7ba9308fd7","name":"5876659a-e678-4c91-b2e7-4c7ba9308fd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"573720e3-e136-4ee2-af11-ec1db2799ef8","name":"573720e3-e136-4ee2-af11-ec1db2799ef8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

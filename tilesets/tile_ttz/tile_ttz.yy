@@ -3,13 +3,9 @@
   "%Name":"tile_ttz",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":13,
-    "SerialiseWidth":14,
-    "TileCompressedData":[
-      -78,0,4,905,906,907,908,-10,0,6,985,986,987,988,0,268436823,-6,0,4,1063,1064,1065,1066,-3,0,1,268436903,
-      -6,0,2,1143,1144,-12,0,2,1223,1224,-12,0,2,1303,1304,-12,0,1,1364,-13,0,1,1444,-7,0,
-    ],
-    "TileDataFormat":1,
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
   },
   "name":"tile_ttz",
   "out_columns":51,
@@ -27,8 +23,8 @@
   },
   "spriteNoExport":true,
   "textureGroupId":{
-    "name":"ArborealAgate",
-    "path":"texturegroups/ArborealAgate",
+    "name":"Default",
+    "path":"texturegroups/Default",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

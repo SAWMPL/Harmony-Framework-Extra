@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_tails_fly",
   "bboxMode":0,
   "bbox_bottom":47,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"acdf6ee3-e4dc-4c9c-b33a-d2655cf5c2e5","name":"acdf6ee3-e4dc-4c9c-b33a-d2655cf5c2e5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"3c13204d-c58a-42d7-938a-9b71e4337f83","name":"3c13204d-c58a-42d7-938a-9b71e4337f83","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"acdf6ee3-e4dc-4c9c-b33a-d2655cf5c2e5","name":"acdf6ee3-e4dc-4c9c-b33a-d2655cf5c2e5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3c13204d-c58a-42d7-938a-9b71e4337f83","name":"3c13204d-c58a-42d7-938a-9b71e4337f83","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

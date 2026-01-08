@@ -2,10 +2,6 @@
 	
 	background_sprite = [];
 	background_frame = [];
-	background_sprite_left = [];
-	background_sprite_top = [];
-	background_sprite_width = [];
-	background_sprite_height = [];
 	factor_x = [];
 	factor_y = [];
 	offset_x = [];

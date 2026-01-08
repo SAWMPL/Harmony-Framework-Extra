@@ -29,13 +29,15 @@
 		draw_set_halign(fa_center);
 		draw_text(hd_w-((256+16)/2), 19, "PLAYER DEBUG")
 		
+		var scr = script_get_name(obj_player.state)
+		
 		//Place info
 		var info_text, info_result;
 		info_text = ["X POSITION", "Y POSITION", "X SPEED", "Y SPEED", "GROUND SPEED", "GROUND ANGLE", "VISUAL ANGLE",
-		"GROUND", "STATE INDEX", "SPRITE", "ANIMATION INDEX"];
+		"GROUND", "STATE", "SPRITE", "ANIMATION INDEX"];
 		info_result = [string(obj_player.x), string(obj_player.y), string(obj_player.x_speed), string(obj_player.y_speed),
 		string(obj_player.ground_speed), string(obj_player.ground_angle), string(obj_player.visual_angle),
-		(obj_player.ground ? "TRUE" : "FALSE"), string(obj_player.state), string_upper(sprite_get_name(animation_get_sprite(obj_player.animator))), string(obj_player.animator.animation_current)];
+		(obj_player.ground ? "TRUE" : "FALSE"),string_upper(scr), string_upper(sprite_get_name(animation_get_sprite(obj_player.animator))), string(obj_player.animator.animation_current)];
 		
 		
 		//Draw info
@@ -55,7 +57,7 @@
 		
 		//Place info
 		info_text = ["STAGE NAME", "ACT NUMBER", "ACT TRANSITION", "TIMER TICKS"];
-		info_result = [obj_level.stage_name, string(obj_level.act), obj_level.act_transition ? "TRUE" : "FALSE", string(global.stage_timer)];
+		info_result = [string_upper(obj_level.stage_name), string(obj_level.act), obj_level.act_transition ? "TRUE" : "FALSE", string(global.stage_timer)];
 		
 		
 		//Draw info

@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"bgm_menu",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":144,
+  "channelFormat":1,
   "compression":1,
+  "compressionQuality":5,
   "conversionMode":0,
   "duration":13.468322,
+  "exportDir":"",
   "name":"bgm_menu",
   "parent":{
     "name":"Menu Music",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_menu.ogg",
-  "type":1,
   "volume":1.0,
 }

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_aaz_swing_point",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5998f3bb-0759-4757-8294-e1e786a6b759","name":"5998f3bb-0759-4757-8294-e1e786a6b759","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5998f3bb-0759-4757-8294-e1e786a6b759","name":"5998f3bb-0759-4757-8294-e1e786a6b759","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Arboreal Agate",
-    "path":"folders/Sprites/Stage Sprites/Arboreal Agate.yy",
+    "name":"Base Stage",
+    "path":"folders/Sprites/Stage Sprites/Base Stage.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

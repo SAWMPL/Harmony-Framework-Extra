@@ -1,4 +1,6 @@
-/// @description Draw Pause Menu
+/// @description Insert description here
+// You can write your code in this editor
+
 	var c, cx, cy, sw, sh;
 	c = view_camera[view_current];
 	cx = camera_get_view_x(c);
@@ -6,16 +8,12 @@
 	sw = global.window_width;
 	sh = global.window_height;
 	
-	//Draw Menu Surface
-	if(!surface_exists(pause_menu)) pause_menu = surface_create(global.window_width, global.window_height);
 	
-	surface_set_target(pause_menu);
-	draw_clear_alpha(c_black, 0);
+	//Draw background
+	draw_set_color(c_black);
+	draw_set_alpha(0.75);
+	draw_rectangle(cx, cy, cx+sw, cy+sh, false);
+	draw_set_color(c_white);
+	draw_set_alpha(1);
 	
-	//Draw Pause Menu Options.
-	draw_sprite(spr_pause_menu, pause_options, sw/2, sh/2);
 	
-	surface_reset_target();
-	
-	//Draw the Menu
-	draw_surface(pause_menu, cx, cy);

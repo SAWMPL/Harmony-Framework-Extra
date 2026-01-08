@@ -1,0 +1,59 @@
+FIXES
+
+- Knux spring fix ✓
+- Bottomless pit iframes fix ✓
+- Super sonic + speed shoes speed fix ✓
+- Speed shooes + inv music fix ✓
+- Wall breaking in super form ✓
+- Fire shield and drop dash + breakable wall fix ✓
+- Collapsing tiles fix ✓
+- Bubble shield spawns a lot of bubbles underwater ✓
+
+- S tubes recode
+
+- fix collapsing tiles
+
+IMROVEMENTS
+
+- Gumball machine ✓
+
+ADDITIONS
+
+= Gimmicks
+- Flail (recode) ✓
+
+- Rotating platforms
+
+- Swing ropes (recode)
+- Spiral path (recode)
+- Ziplines (recode)
+- Rail surfaces (recode)
+- Button and template activation object (recode)
+- Boss system
+- Moving and stretchable spikes
+
+= Abilities
+- Instashield (port from DIM)
+- Flight cancel for Tails
+
+= Functions
+- Smooth palette swap shader
+- Music Pitching (?)
+- Additional draw_sprite_tiled_horizontal scripts
+- Legacy Harmony's Background Sprite Parts variables and functionality (background_sprite_left, background_sprite_top, background_sprite_width and background_sprite_height)
+- Paletted background + paletted line shader (Port from Classics)
+- 3d sound functions
+- Check region function ✓
+- Check region function badnic example
+
+= Menus
+- Pause Menu (chaotix(crackers))
+- Save select (chaotix)
+- Title screen template (chaotix)
+- Demo replay system
+
+= etc.
+- Special stage (S1)
+- Arboreal Agate (act 2, will contain new gimmicks)
+
+= ✓

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_tails_skidturn",
   "bboxMode":0,
   "bbox_bottom":47,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5fc86322-6816-4293-b94c-27292adcfaf9","name":"5fc86322-6816-4293-b94c-27292adcfaf9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d81b4847-7f29-4323-909d-935003cd7bf2","name":"d81b4847-7f29-4323-909d-935003cd7bf2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5fc86322-6816-4293-b94c-27292adcfaf9","name":"5fc86322-6816-4293-b94c-27292adcfaf9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d81b4847-7f29-4323-909d-935003cd7bf2","name":"d81b4847-7f29-4323-909d-935003cd7bf2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

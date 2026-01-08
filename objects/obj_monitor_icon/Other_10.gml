@@ -29,19 +29,10 @@
 		case "Invincible":
 			obj_player.invincible = true
 			obj_player.invincible_timer = 1200;
-			play_music(J_INVINCIBLE, Jingle);
 		break;
 		
 		case "Speed Shoes":
 			obj_player.speed_shoes = 1200;
-			if(global.speed_shoes_music == 0)
-			{
-				play_music(J_SPEEDSHOE, Jingle);
-			}
-			else if(global.speed_shoes_music == 1)
-			{
-				music_set_pitch(BGM, obj_level.stage_speedshoes_pitch);
-			}
 		break;
 		
 		case "Eggman":
@@ -49,7 +40,13 @@
 		break;
 		
 		case "Extra Life":
-			play_sound(j_extra_life);
+			SOUND_EXTRA_LIFE;
 			global.life += 1;
 		break;
+		
+		case "Combine Ring":
+			obj_player.combinering = 1;
+			play_sound(sfx_combinering);
+		break;
+		
 	}

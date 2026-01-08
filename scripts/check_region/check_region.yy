@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"check_region",
   "parent":{
-    "name":"Misc. Scripts",
-    "path":"folders/Scripts/Engine Scripts/Misc. Scripts.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

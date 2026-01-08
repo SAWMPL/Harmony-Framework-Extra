@@ -34,7 +34,7 @@ function draw_background_layer(background_layer)
 		//Draw the background if the visibility flag is on
 		if (visibility[background_layer] == true) 
 		{
-			draw_sprite_tiled_horizontal_part(background_sprite[background_layer], background_frame[background_layer], background_sprite_left[background_layer], background_sprite_top[background_layer], background_sprite_width[background_layer], background_sprite_height[background_layer], floor(pos_x[background_layer]), floor(pos_y[background_layer]), background_vertical[background_layer]);
+			draw_sprite_tiled_horizontal(background_sprite[background_layer], background_frame[background_layer], floor(pos_x[background_layer]), floor(pos_y[background_layer]), background_vertical[background_layer]);
 		}
 	}
 	else
@@ -89,12 +89,12 @@ function draw_background_layer(background_layer)
 		shader_set_uniform_f(StepY, line_steps[background_layer]/(1-factor_x[background_layer]));
 		shader_set_uniform_f(HeightY, line_gap[background_layer]);
 		shader_set_uniform_f(ScaleY, bg_scale[background_layer]); 
-		shader_set_uniform_f(ShdHeight, background_sprite_height[background_layer]); 
+		shader_set_uniform_f(ShdHeight, sprite_get_height(background_sprite[background_layer])); 
 		
 		//Draw the background if visibility flag is on
 		if (visibility[background_layer] == true) 
 		{
-			draw_sprite_tiled_horizontal_part_ext(background_sprite[background_layer], background_frame[background_layer], background_sprite_left[background_layer], background_sprite_top[background_layer], background_sprite_width[background_layer], background_sprite_height[background_layer], camera_get_view_x(view_camera[view_current]), floor(pos_y[background_layer]) , 1, bg_scale[background_layer], c_white, 1);
+			draw_sprite_ext(background_sprite[background_layer], background_frame[background_layer], camera_get_view_x(view_camera[view_current]), floor(pos_y[background_layer]) , 1, bg_scale[background_layer], 0, c_white, 1);
 		}
 	}
 	

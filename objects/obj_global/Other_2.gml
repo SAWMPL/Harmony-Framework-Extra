@@ -2,17 +2,31 @@
 	//Variables for this object only
 	process_object_list = ds_list_create();
 	
+	global.store_object_state = ds_list_create();
+	global.previous_room = rm_splash;
+	global.store_player_state = {
+		shield : S_NONE,
+		combinering : 0,
+		rings : 0
+	}
+	
+	#macro DEVMODE false
+	#macro Dev:DEVMODE true
+	
+	//TO ENABLE DEVELOPER FEATURES, PLEASE GO INTO THE TARGET ICON AND SELECT "Dev"
+	//This helps you easily switch dev features on or off when compiling or testing your game
+	
 	//Game variables
 	global.process_objects = true;			//Flag that allows step event of every object to be processed
-	global.dev_mode = true;					//Flag for developer mode, which allows you to use dev commands, don't forget to turn this off when releasing the game
+	global.dev_mode = DEVMODE;					//Flag for developer mode, which allows you to use dev commands, don't forget to turn this off when releasing the game
 	
 	//Character globals
 	global.character = CHAR_SONIC;			//Global value for the character
 	
 	//Screen values
-	global.window_width  = 320;				//Window's horizontal size
+	global.window_width  = 426;				//Window's horizontal size
 	global.window_height = 240;				//Window's vertical size
-	global.window_size   = 2;				//Window size multiplier
+	global.window_size   = 1;				//Window size multiplier
 	
 	//keyboard inputs
 	global.up = vk_up;						
@@ -33,6 +47,15 @@
 	global.checkpoint_id = noone;			//Checkpoint that is currently active
 	global.time_store = 0;					//Store value for timer when checkpoint gets active
 	
+	enum BONUSSTAGE {
+		OUTSIDE,
+		GOING_TO,
+		INSIDE,
+		LEAVING,
+	}
+	global.bonus_stage_state = BONUSSTAGE.OUTSIDE
+	bonus_stage_trigger = false
+	
 	//Stage values
 	global.object_timer = 0;				//Object pre frame timer, every 60 frames in a 1 second
 	global.score = 0;						//Global variable for score
@@ -40,8 +63,11 @@
 	global.rings = 0;						//Global variable for rings
 	global.life = 3;						//Global variable for life
 	global.title_card = true;				//Flag that allows title card to be triggered, used in dev
-	global.emeralds = [false, false, false, false, false, false, false];				//List of active emeralds
+	global.emeralds = [true, true, true, true, true, true, true];				//List of active emeralds
 	global.col_tile = ["CollisionMain", "CollisionSemi", "CollisionA", "CollisionB"];	//List of collision layers
+	global.extra_life_jingle = true;		//flag that plays a jingle that cuts out the music when true, plays a sound effect if false
+	
+	#macro SOUND_EXTRA_LIFE if (global.extra_life_jingle){ play_sound(j_extra_life)} else {play_sound(sfx_extralife)}
 	
 	//Act transition variables
 	global.monitor_store = [];				//List of monitor instances that were bumped with sign
@@ -53,24 +79,20 @@
 	global.ring_extralife = 100;			//Ring threshold for extra life
 	
 	//Customizables variables
-	global.rotation_type = 1;				//This changes player's visual rotation 
+	global.rotation_type = 0;				//This changes player's visual rotation 
 	global.use_battery_rings = false;		//If this is disabled, destroying enemies will spawn flickies instead
 	global.chaotix_monitors = false;		//Changes monitor icons to be like chaotix, monitor icon spins and it turns into dust
 	global.use_peelout = true;				//Flag that allows peel-out ability
 	global.use_dropdash = true;				//Flag that allows dropdash ability
-	global.use_tails_flight_cancel = true;	//Flag that allows Tails flight cancel ability
-	global.use_airroll = true;				//Flag that allows rolling while air-borne
+	global.use_airroll = false;				//Flag that allows rolling while air-borne
 	global.use_spindash = true;				//Flag taht allows player to use the spindash
 	global.camera_pan_type = 0;				//Variable that changes how camera panning works. 0 = No panning, 1 = Sonic CD panning[currently inaccurate], 2 = S1D/XG styled camera panning 
 	global.chaotix_dust_effect = false;		//Flag that disables classic spindash/skid dust effect
-	global.camera_type = 0;					//Vertical camera scrolling type, 0 = Megadrive, 1 = Mania
+	global.camera_type = 1;					//Vertical camera scrolling type, 0 = Megadrive, 1 = Mania
 	global.knux_camera_smooth = false;		//Flag for using smooth ledge climb camera movement
-	global.speed_shoes_music = 0;			//Variable that changes how the speed shoes music is handled. 0 = Jingle-based, 1 = Music Pitch-based
+	global.water_running_effect = 0;		//0 for the hydrocity effect, 1 for repeating splashes
+	global.no_skid_state = true;			//makes skidding work closer to the genesis games, instead of a seperate state
 
-    //Savefile stuff:
-    global.collectible_save = "Collectibles.harmony";
-
-	
 	//Font setup:
 	global.hud_number = font_add_sprite(spr_hud_numbers, ord("0"), false, 0);
 	global.text_font = font_add_sprite_ext(spr_hud_font, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", false, 0);
@@ -91,6 +113,8 @@
 		instance_create_depth(0, 0, 0, obj_shell);
 	}
 	
+	global.music_map = ds_map_create();
+	
 	//Initilize the music list
 	init_music_list();
 	
@@ -100,5 +124,9 @@
 	#macro WINDOW_HEIGHT global.window_height
 	#macro FRAME_TIMER global.object_timer
 	
+	global.red_ring_map = ds_map_create();
+	
+	
 	//Ending event:
 	room_goto_next();
+	

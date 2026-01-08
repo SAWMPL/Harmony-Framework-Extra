@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, 0, x,y,1,1,obj_gumball_machine.handle_rot, c_white, 1);

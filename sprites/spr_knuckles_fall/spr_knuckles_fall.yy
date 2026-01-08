@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_knuckles_fall",
   "bboxMode":0,
   "bbox_bottom":59,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bdd8ef8e-4d2c-4a0f-b706-9b7a6e8d2219","name":"bdd8ef8e-4d2c-4a0f-b706-9b7a6e8d2219","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"39a06967-5461-4bf1-8c06-535df4fb3b9b","name":"39a06967-5461-4bf1-8c06-535df4fb3b9b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bdd8ef8e-4d2c-4a0f-b706-9b7a6e8d2219","name":"bdd8ef8e-4d2c-4a0f-b706-9b7a6e8d2219","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"39a06967-5461-4bf1-8c06-535df4fb3b9b","name":"39a06967-5461-4bf1-8c06-535df4fb3b9b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

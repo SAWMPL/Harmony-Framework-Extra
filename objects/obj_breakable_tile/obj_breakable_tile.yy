@@ -3,7 +3,7 @@
   "%Name":"obj_breakable_tile",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_breakable_tile",
@@ -30,8 +30,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"target_layer","filters":[],"listItems":[],"multiselect":false,"name":"target_layer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"\"","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"breakable_type","filters":[],"listItems":[],"multiselect":false,"name":"breakable_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"target_layer","filters":[],"listItems":[],"multiselect":false,"name":"target_layer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"\"","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"breakable_type","filters":[],"listItems":[],"multiselect":false,"name":"breakable_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varDescription":"0 - horizontal\r\n1 - vertical with bounce\r\n2 - vertical without bounce","varFriendlyName":"Types:","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"knuckles_wall","filters":[],"listItems":[],"multiselect":false,"name":"knuckles_wall","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

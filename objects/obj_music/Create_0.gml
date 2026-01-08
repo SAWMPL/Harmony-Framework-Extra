@@ -9,8 +9,6 @@
 		playing[i] = noone;
 		loop_start[i] = 0.00;
 		loop_end[i] = 0.00;
-		target_pitch[i] = 1;
-		play_pitch[i] = target_pitch[i];
 		play_data[i] = "";
 		fade_multiplier[i] = 1;
 		fade_speed[i] = 1;

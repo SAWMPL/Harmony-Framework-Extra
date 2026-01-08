@@ -1,27 +1,17 @@
-/// @description Update the angle and damage hixbox
-	angle = 90 * dsin(global.object_timer * rot_speed);
-	direction = angle + 90;
-	
-	if(on_screen() && (((global.object_timer * rot_speed + 180) mod 360 == 180) || ((global.object_timer * rot_speed + 180) mod 360 == 0))) 
-	{
-		play_sound(sfx_flail);
-	}
+angle = (angle+rot_speed) mod 360;
 
-	if((global.object_timer * rot_speed) mod 360 >= 90 && (global.object_timer  * rot_speed) mod 360 <= 270) 
-	{
-		attacking = true;
-	}
-	else 
-	{
-		attacking = false;
-	}
-	
-	var hitbox_x = x + lengthdir_x(chain_length*14, direction);
-	
-	var hitbox_scale = 1 - 0.25 * dsin(global.object_timer  * rot_speed + 90);
+if(attacking != (angle >= 90 && angle <= 270))
+{
+    play_sound(sfx_flail_swing);
+    attacking = !attacking;
+}
 
-	if(attacking && check_region(-24*hitbox_scale, -24*hitbox_scale, 24*hitbox_scale, 24*hitbox_scale, hitbox_x, y-26) && obj_player.state != ST_KNOCKOUT && !obj_player.debug) 
-	{
-		player_hurt(hitbox_x);
-		play_sound(sfx_spike);
-	}
+if(attacking && obj_player.state != player_state_knockout && !obj_player.debug) 
+{
+    var _x = x + (((chain_length-1)*chain_width)*dsin(angle))
+    if(check_region(-24, -24, 24, 24, _x, y-26))
+    {
+        player_hurt(_x);
+        play_sound(sfx_spike);
+    }
+}
