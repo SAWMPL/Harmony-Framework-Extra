@@ -1,41 +1,61 @@
 # Harmony Framework Extra
+Fork of a Harmony framework(made by Darknn__, Joshyflip, Chopp).
 
-Fork of a Harmony framework (made by Darknn__).
 Adds stuff that's not gonna be in harmony or isn't added yet.
 
-# Feel free to use it but don't forget to credit us! 
-- SAWMPL
-- jao583
-- Davo255
-- Blue (BlueSpeedster)
-- and harmony creators of course
-# Additions
+# CHANGES! (stuff without ✓ after it is TODO, keep it in mind)
 
-Added:
+FIXES
+
+- Knux spring fix ✓
+- Bottomless pit iframes fix ✓
+- Super sonic + speed shoes speed fix ✓
+- Speed shooes + inv music fix ✓
+- Wall breaking in super form ✓
+- Fire shield and drop dash + breakable wall fix ✓
+- Collapsing tiles fix ✓
+- Bubble shield spawns a lot of bubbles underwater ✓
+
+- S tubes recode
+
+IMROVEMENTS
+
+- Gumball machine ✓
+
+ADDITIONS
+
+= Gimmicks
+- Flail (recode) ✓
+
 - Rotating platforms
-- Flail
-- Swing ropes
-- Button and template activation object
-- Smooth palette swap shader
-- Flight cancel for Tails
-- Collectibles (Ported from Hoshi)
-- Pause Menu (mostly done but still W.I.P.)
-- Music Pitching
-- Legacy Harmony's Background Sprite Parts variables and functionality (`background_sprite_left`, `background_sprite_top`, `background_sprite_width` and `background_sprite_height`)
-- Additional `draw_sprite_tiled_horizontal` scripts
-
-WIP:
-- Arboreal Agate act 2
-
-To do:
-- Instashield
-- Spiral path
-- Ziplines
-- Rail surfaces
-- Superform
+- Swing ropes (recode)
+- Spiral path (recode)
+- Ziplines (recode)
+- Rail surfaces (recode)
+- Button and template activation object (recode)
 - Boss system
-- Title screen template
+- Moving and stretchable spikes
+
+= Abilities
+- Instashield
+- Flight cancel for Tails
+
+= Functions
+- Smooth palette swap shader
+- Music Pitching
+- Additional draw_sprite_tiled_horizontal scripts
+- Legacy Harmony's Background Sprite Parts variables and functionality (background_sprite_left, background_sprite_top, background_sprite_width and background_sprite_height)
+- Paletted background + paletted line shader
+- 3d sound functions
+- Check region function ✓
+- Check region function badnic example
+
+= Menus
+- Pause Menu (chaotix(crackers))
+- Save select (chaotix) (almost done but still missing stuff)
+- Title screen template (chaotix)
 - Demo replay system
-- Super simple save select(maybe from chaotix idk)
-- Special stage *-I'm not sure-*
-- *idk... something*
+
+= etc.
+- Special stage
+- Arboreal Agate (act 2, will contain new gimmicks)
