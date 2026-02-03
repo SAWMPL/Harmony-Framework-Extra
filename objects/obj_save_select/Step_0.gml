@@ -54,7 +54,7 @@ switch(menu_screen)
 				{
 					if(save[selected_save].finished == false) //Go to last played level
 					{
-						apply_data();
+						apply_savedata();
 					}
 					else //Stage select
 					{
@@ -65,7 +65,7 @@ switch(menu_screen)
 				{
 					if(deletion_confirm == true)
 					{
-						wipe_data();
+						save[selected_save] = empty_savedata;
 						deleting_save = false;
 						deletion_confirm = false;
 					}

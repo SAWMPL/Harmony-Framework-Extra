@@ -59,6 +59,6 @@ if(check_region(-20, -20, 20, 20))
 
 lid_frame = min(lid_frame,lid_frame_count);
 lid.x = x;
-lid.y = y + 64;
+lid.y = y;
 handle.x = x;
 handle.y = y + 28;

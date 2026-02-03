@@ -71,7 +71,7 @@
 		if(keyboard_check_pressed(ord("2")))
 		{
 			global.life++;
-			SOUND_EXTRA_LIFE;
+			play_sound_extra_life();
 		}
 		
 		//Change shields

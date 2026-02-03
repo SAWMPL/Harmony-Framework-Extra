@@ -7,6 +7,73 @@ draw_sprite(spr_save_bg_save, 0, wcx, wcy+4);
 
 var color = [c_white, c_black];
 
+draw_save = function(save_slot, px, py, color, flag = false)
+{
+	draw_set_color(color);
+	
+	draw_sprite_ext(spr_save_border, 0, px, py, 1,1, 0, color, 1);
+	
+	if(save_slot == -1)
+	{
+		draw_sprite_ext(spr_save_data_title, 0, px-32, py-48, 1,1, 0, color, 1);
+		draw_sprite_ext(spr_save_new, 0, px, py, 1,1, 0, color, 1);
+		
+		draw_set_font(font_save_text);
+		draw_set_halign(fa_center);
+		draw_text(px+4,py+40,"0:00:00");
+	}
+	else
+	{
+		if(save[save_slot].new_save == true)
+		{
+			draw_sprite_ext(spr_save_data_title, 1, px-32, py-48, 1,1, 0, color, 1);
+			draw_set_font(font_save_data);
+			draw_set_halign(fa_center);
+			draw_text(px+28, py-48,save_slot+1);
+			
+			draw_sprite_ext(spr_save_new, 0, px, py, 1,1, 0, color, 1);
+			
+			draw_set_font(font_save_text);
+			draw_set_halign(fa_center);
+			draw_text(px+4,py+40, "0:00:00");
+		}
+		else
+		{
+			draw_sprite_ext(spr_save_data_title, 1, px-32, py-48, 1,1, 0, color, 1);
+			draw_set_font(font_save_data);
+			draw_set_halign(fa_center);
+			draw_text(px+28, py-48,save_slot+1);
+			
+			draw_sprite_ext(spr_save_zone_card, save[save_slot].finished ? sprite_get_number(spr_save_zone_card)-1 : level_list[save[save_slot].level[0]][3], px+94, py+20, 1,1, 0, color, 1);
+			draw_set_font(font_save_zone);
+			draw_set_halign(fa_right);
+			draw_text(px+98, py+26,save[save_slot].finished ? "CLEARED" : level_list[save[save_slot].level[0]][2]);
+			
+			draw_sprite_ext(character_sprite[save[save_slot].character][0], character_sprite[save[save_slot].character][1], px-76, py, 1,1, 0, color, 1);
+			
+			draw_sprite_ext(spr_save_life_icons, save[save_slot].character, px-50, py-16, 1,1, 0, color, 1);
+			draw_sprite_ext(spr_save_coninue_icons, save[save_slot].character, px-50, py-1, 1,1, 0, color, 1);
+			
+			draw_set_font(font_save_text);
+			draw_set_halign(fa_center);
+			if(!flag)palette_swap(spr_save_font_palette, 1);
+			draw_text(px-15, py-7,(save[save_slot].lifes > 9 ? "" : "0")+string(save[save_slot].lifes));
+			draw_text(px-15, py+17,(save[save_slot].continues > 9 ? "" : "0")+string(save[save_slot].continues));
+			if(!flag)shader_reset();
+			
+			
+			//Time
+			var minute, sec, milsec;
+			milsec = floor(save[save_slot].total_time/10) mod 100;
+			sec = floor(save[save_slot].total_time/1000) mod 60;
+			minute = floor(save[save_slot].total_time/60000);
+			
+			draw_text(px+4,py+40, string(minute)+":"+(sec > 9 ? "" : "0") + string(sec)+":"+(milsec > 9 ? "" : "0") + string(milsec));
+		}
+	}
+	draw_set_color(c_white);
+}
+
 if(menu_screen == 1)
 {
 	for (var j = 1; j >= 0; j--)

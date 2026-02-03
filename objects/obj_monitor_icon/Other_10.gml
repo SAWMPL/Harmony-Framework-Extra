@@ -40,7 +40,7 @@
 		break;
 		
 		case "Extra Life":
-			SOUND_EXTRA_LIFE;
+			play_sound_extra_life();;
 			global.life += 1;
 		break;
 		

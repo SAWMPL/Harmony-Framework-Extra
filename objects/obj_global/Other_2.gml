@@ -62,12 +62,11 @@
 	global.stage_timer = 0;					//Global variable for stage timer
 	global.rings = 0;						//Global variable for rings
 	global.life = 3;						//Global variable for life
+	global.continues = 3;					//Global variable for continues
 	global.title_card = true;				//Flag that allows title card to be triggered, used in dev
 	global.emeralds = [true, true, true, true, true, true, true];				//List of active emeralds
 	global.col_tile = ["CollisionMain", "CollisionSemi", "CollisionA", "CollisionB"];	//List of collision layers
 	global.extra_life_jingle = true;		//flag that plays a jingle that cuts out the music when true, plays a sound effect if false
-	
-	#macro SOUND_EXTRA_LIFE if (global.extra_life_jingle){ play_sound(j_extra_life)} else {play_sound(sfx_extralife)}
 	
 	//Act transition variables
 	global.monitor_store = [];				//List of monitor instances that were bumped with sign
